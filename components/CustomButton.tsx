@@ -5,7 +5,6 @@ import Image from "next/image";
 const CustomButton = ({
   title,
   containerStyles,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   handleClick,
   btnType,
   textStyles,

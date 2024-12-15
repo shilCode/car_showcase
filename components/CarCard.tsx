@@ -4,17 +4,15 @@ import Image from "next/image";
 import { useState } from "react";
 import CustomButton from "./CustomButton";
 import { calculateRent } from "@/utils";
-import CarDetails from "./CarDetails";
 
 interface CarCardProps {
   car: CarProps;
 }
 
-const CarCard = ({ car }: CarCardProps) => {
+const CarCard = ({ car }: CarProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
   const carRent = calculateRent(city_mpg, year);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [setOpen, setIsOpen] = useState(false);
+  const [setOpen, setIsOpen] = useState(false)
   return (
     <div className="car-card group">
       <div className="car-card__content">
@@ -67,12 +65,6 @@ const CarCard = ({ car }: CarCardProps) => {
             handleClick={() => setIsOpen(true)}
           ></CustomButton>
         </div>
-
-        <CarDetails
-          isOpen={true}
-          closeModal={() => setIsOpen(false)}
-          car={car}
-        />
       </div>
     </div>
   );

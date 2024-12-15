@@ -16,15 +16,14 @@ export default async function Home() {
         <div className="home__filters">
           <SearchBar />
           <div className="home_filter-container">
-            <CustomFilter />
-            <CustomFilter />
+            <CustomFilter title="fuel" />
+            <CustomFilter title="year" />
           </div>
         </div>
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrappers">
               {allCars?.map((car)=>(
-                // eslint-disable-next-line react/jsx-key
                 <CarCard car={car}/>
               ))}
             </div>
