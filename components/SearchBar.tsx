@@ -2,14 +2,14 @@
 import  { useState } from "react";
 import SearchManufacturer from "./SearchManufacturer";
 const SearchBar = () => {
-    const [manufacturer, setmanufacturer] = useState('')
+    const [manufacturer, setManufacturer] = useState("");
   //   const handleSearch=()={};
   return (
     <form className="searchbar">
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
-          setmanufacturer={setmanufacturer}
+          setManufacturer={setManufacturer}
         />
       </div>
     </form>

@@ -9,10 +9,10 @@ interface CarCardProps {
   car: CarProps;
 }
 
-const CarCard = ({ car }: CarProps) => {
+const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
   const carRent = calculateRent(city_mpg, year);
-  const [setOpen, setIsOpen] = useState(false)
+  const [setOpen, setIsOpen] = useState(false);
   return (
     <div className="car-card group">
       <div className="car-card__content">
