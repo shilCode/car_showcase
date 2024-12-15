@@ -4,6 +4,7 @@ import CustomButton from "./CustomButton";
 import Image from "next/image";
 
 const Hero = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleScroll = () => {};
   return (
     <div className="Hero">
@@ -19,7 +20,7 @@ const Hero = () => {
         <CustomButton
           title="Explore "
           containerStyles="bg-primary-blue text-white rounded-full mt-10"
-          //   handleClick={handleScroll}
+            handleClick={handleScroll}
         />
         <div className="hero__image-container">
           <div className="hero__image">
