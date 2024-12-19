@@ -1,3 +1,5 @@
+import { CarProps } from "@/types";
+
 export async function fetchCars() {
   const headers = {
     "x-rapidapi-key": "5cfc73e0d7msh22d711498304c22p190909jsnff1997ccba02",
@@ -22,4 +24,18 @@ export const calculateRent = (city_mpg: number, year: number) => {
   //Calculate total rental rate per day
   const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
   return rentalRatePerDay.toFixed(0);
+};
+
+//TODO: API down below does not work and I cannot find a free API
+export const generateCarImageUrl = (car: CarProps, angle?: string) => {
+  const url = new URL("https://cdn.imagin.studio/getImages");
+
+  const { make, year, model } = car;
+  url.searchParams.append("customer", "");
+  url.searchParams.append("Make_ID", make);
+  url.searchParams.append("Model_ID", `${year}`);
+  url.searchParams.append("Model_Name", model);
+  url.searchParams.append("Model_Name", `${angle}`);
+
+  return `${url}`;
 };
